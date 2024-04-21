@@ -101,8 +101,8 @@ public static var hitboxalpha:Float = 0.2;
 	}
 
 	public static function saveSettings() {
-		FlxG.save.data.hitboxalpha = hitboxalpha
-		FlxG.save.data.hitboxmode =hitboxmode
+		FlxG.save.data.hitboxalpha = hitboxalpha;
+		FlxG.save.data.hitboxmode =hitboxmode;
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.opponentStrums = opponentStrums;
