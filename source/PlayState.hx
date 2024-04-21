@@ -1938,6 +1938,7 @@ class PlayState extends MusicBeatState
 		generatedMusic = true;
 	}
 
+}
 	public var hasCheckpoints:Bool = false;
 
 	function eventPushed(event:EventNote) {
