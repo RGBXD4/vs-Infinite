@@ -1,7 +1,7 @@
 package;
 
 import flixel.graphics.FlxGraphic;
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
 import Section.SwagSection;
@@ -888,13 +888,13 @@ class PlayState extends MusicBeatState
 					luaArray.push(new FunkinLua(luaToLoad));
 				}
 			}
-			#elseif sys
+			#end
 			var luaToLoad:String = Paths.getPreloadPath('custom_notetypes/' + notetype + '.lua');
 			if(OpenFlAssets.exists(luaToLoad))
 			{
 				luaArray.push(new FunkinLua(luaToLoad));
 			}
-			#end
+			
 		}
 		for (event in eventPushedMap.keys())
 		{
@@ -912,13 +912,13 @@ class PlayState extends MusicBeatState
 					luaArray.push(new FunkinLua(luaToLoad));
 				}
 			}
-			#elseif sys
+			#end
 			var luaToLoad:String = Paths.getPreloadPath('custom_events/' + event + '.lua');
 			if(OpenFlAssets.exists(luaToLoad))
 			{
 				luaArray.push(new FunkinLua(luaToLoad));
 			}
-			#end
+			
 		}
 		#end
 		noteTypeMap.clear();
@@ -1211,12 +1211,12 @@ class PlayState extends MusicBeatState
 				doPush = true;
 			}
 		}
-		#else
+		#end
 		luaFile = Paths.getPreloadPath(luaFile);
 		if(Assets.exists(luaFile)) {
 			doPush = true;
 		}
-		#end
+		
 
 		if(doPush)
 		{
@@ -1254,9 +1254,9 @@ class PlayState extends MusicBeatState
 		var filepath:String = Paths.video(name);
 		#if sys
 		if(!FileSystem.exists(filepath))
-		#else
-		if(!OpenFlAssets.exists(filepath))
 		#end
+		if(!OpenFlAssets.exists(filepath))
+		
 		{
 			FlxG.log.warn('Couldnt find video file: ' + name);
 			startAndEnd();
@@ -1797,9 +1797,9 @@ class PlayState extends MusicBeatState
 		var file:String = Paths.json(songName + '/events');
 		#if MODS_ALLOWED
 		if (FileSystem.exists(Paths.modsJson(songName + '/events')) || FileSystem.exists(file)) {
-		#else
-		if (OpenFlAssets.exists(file)) {
 		#end
+		if (OpenFlAssets.exists(file)) {
+		
 			var eventsData:Array<Dynamic> = Song.loadFromJson('events', songName).events;
 			for (event in eventsData) //Event Notes
 			{
