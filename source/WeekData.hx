@@ -127,7 +127,7 @@ class WeekData {
 				//trace('pushed Directory: ' + folder);
 			}
 		}
-		#elnd
+		#end
 		var directories:Array<String> = [Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
 		
