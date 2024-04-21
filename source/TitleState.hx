@@ -1,6 +1,6 @@
 package;
 
-#if DISCORD_ALLOWED
+#if desktop
 import Discord.DiscordClient;
 #end
 #if desktop
@@ -139,7 +139,7 @@ class TitleState extends MusicBeatState
 			FlxTransitionableState.skipNextTransOut = true;
 			MusicBeatState.switchState(new FlashingState());
 		} else {
-			#if DISCORD_ALLOWED
+			#if desktop
 			if (!DiscordClient.isInitialized)
 			{
 				DiscordClient.initialize();
@@ -255,7 +255,7 @@ class TitleState extends MusicBeatState
 
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
-		#if sys
+		#if desktop
 		if (!initialized && Argument.parse(Sys.args()))
 		{
 			initialized = true;
