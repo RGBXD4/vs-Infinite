@@ -127,10 +127,10 @@ class WeekData {
 				//trace('pushed Directory: ' + folder);
 			}
 		}
-		#else
+		#elnd
 		var directories:Array<String> = [Paths.getPreloadPath()];
 		var originalLength:Int = directories.length;
-		#end
+		
 
 		var sexList:Array<String> = CoolUtil.coolTextFile(Paths.getPreloadPath('weeks/weekList.txt'));
 		for (i in 0...sexList.length) {
@@ -156,7 +156,7 @@ class WeekData {
 			}
 		}
 
-		#if MODS_ALLOWED
+		#if desktop
 		for (i in 0...directories.length) {
 			var directory:String = directories[i] + 'weeks/';
 			if(FileSystem.exists(directory)) {
