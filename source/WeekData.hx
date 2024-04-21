@@ -212,11 +212,11 @@ class WeekData {
 		if(FileSystem.exists(path)) {
 			rawJson = File.getContent(path);
 		}
-		#else
+		#end
 		if(OpenFlAssets.exists(path)) {
 			rawJson = Assets.getText(path);
 		}
-		#end
+		
 
 		if(rawJson != null && rawJson.length > 0) {
 			return cast Json.parse(rawJson);
