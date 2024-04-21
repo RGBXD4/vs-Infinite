@@ -305,9 +305,9 @@ class Paths
 		}
 
 		return FlxAtlasFrames.fromSparrow((imageLoaded != null ? imageLoaded : image(key, library)), (xmlExists ? File.getContent(modsXml(key)) : file('images/$key.xml', library)));
-		#else
-		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
 		#end
+		return FlxAtlasFrames.fromSparrow(image(key, library), file('images/$key.xml', library));
+		
 	}
 
 
@@ -321,9 +321,9 @@ class Paths
 		}
 
 		return FlxAtlasFrames.fromSpriteSheetPacker((imageLoaded != null ? imageLoaded : image(key, library)), (txtExists ? File.getContent(modsTxt(key)) : file('images/$key.txt', library)));
-		#else
-		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
 		#end
+		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
+		
 	}
 
 	inline static public function formatToSongPath(path:String) {
@@ -389,14 +389,14 @@ class Paths
 		if(!currentTrackedSounds.exists(gottenPath))
 		#if MODS_ALLOWED
 			currentTrackedSounds.set(gottenPath, Sound.fromFile('./' + gottenPath));
-		#else
+		#end
 		{
 			var folder:String = '';
 			if(path == 'songs') folder = 'songs:';
 
 			currentTrackedSounds.set(gottenPath, OpenFlAssets.getSound(folder + getPath('$path/$key.$SOUND_EXT', SOUND, library)));
 		}
-		#end
+		
 		localTrackedAssets.push(gottenPath);
 		return currentTrackedSounds.get(gottenPath);
 	}
