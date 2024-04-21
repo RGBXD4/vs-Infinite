@@ -129,27 +129,27 @@ class Character extends FlxSprite
 				}
 
 				if (!FileSystem.exists(path))
-				#else
+				#end
 				var path:String = Paths.getPreloadPath(characterPath);
 				if (!Assets.exists(path))
-				#end
+				
 				{
 					path = Paths.getPreloadPath('characters/' + DEFAULT_CHARACTER + '.json'); //If a character couldn't be found, change him to BF just to prevent a crash
 				}
 
 				#if MODS_ALLOWED
 				var rawJson = File.getContent(path);
-				#else
-				var rawJson = Assets.getText(path);
 				#end
+				var rawJson = Assets.getText(path);
+				
 
 				var json:CharacterFile = cast Json.parse(rawJson);
 				#if MODS_ALLOWED
 				var txtToFind:String = Paths.getPath('images/' + json.image + '.txt', TEXT);
 				if(FileSystem.exists(txtToFind) || Assets.exists(txtToFind))
-				#else
-				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
 				#end
+				if(Assets.exists(Paths.getPath('images/' + json.image + '.txt', TEXT)))
+				
 				{
 				//bozo forgot about the packer shits : P
 					frames = Paths.getPackerAtlas(json.image);
