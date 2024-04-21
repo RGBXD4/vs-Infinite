@@ -67,6 +67,7 @@ class MusicBeatSubstate extends FlxSubState
 		controls.removeFlxInput(trackedinputsUI);
 		controls.removeFlxInput(trackedinputsNOTES);
 		#end
+	}
 
 	override function update(elapsed:Float)
 	{
