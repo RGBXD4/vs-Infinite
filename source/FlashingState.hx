@@ -13,6 +13,9 @@ class FlashingState extends MusicBeatState
 
 	override function create()
 	{
+		#if android
+		addVirtualPad(NONE, A_B);
+		#end
 		super.create();
 
 		disclaimer = new FlxSprite().loadGraphic(Paths.image('VSInfiniteWARNING'));
