@@ -1908,6 +1908,7 @@ class PlayState extends MusicBeatState
 		checkEventNote();
 		generatedMusic = true;
 
+}
 	public var hasCheckpoints:Bool = false;
 
 	function eventPushed(event:EventNote) {
