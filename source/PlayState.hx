@@ -1789,8 +1789,7 @@ class PlayState extends MusicBeatState
 					eventPushed(subEvent);
 				}
 			}
-		}
-
+}
 		for (section in noteData)
 		{
 			for (songNotes in section.sectionNotes)
@@ -1908,7 +1907,6 @@ class PlayState extends MusicBeatState
 		}
 		checkEventNote();
 		generatedMusic = true;
-	}
 
 	public var hasCheckpoints:Bool = false;
 
