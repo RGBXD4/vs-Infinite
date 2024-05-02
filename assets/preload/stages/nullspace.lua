@@ -1,38 +1,35 @@
 function onCreate()
-	posX = -400;
-	posY = -425;
-	scale = 1.7;
 
 	-- background shit
-	makeLuaSprite('bg', 'nullspace/bg1', posX, posY);
+	makeLuaSprite('bg', 'nullspace/bg1', -400, -425);
 	setScrollFactor('bg', 0.2, 0.2);
-	scaleObject('bg', scale, scale);
-	updateHitbox('bg');
+	scaleObject('bg', 1.7, 1.7);
+	--updateHitbox('bg');
 	
-	makeLuaSprite('bg2', 'nullspace/bg2', posX, posY);
+	makeLuaSprite('bg2', 'nullspace/bg2', -400, -425);
 	setScrollFactor('bg2', 0.3, 0.3);
-	scaleObject('bg2', scale, scale);
-	updateHitbox('bg2');
+	scaleObject('bg2', 1.7, 1.7);
+	--updateHitbox('bg2');
 	
-	makeLuaSprite('bg3', 'nullspace/bg3', posX, posY);
+	makeLuaSprite('bg3', 'nullspace/bg3', -400, -425);
 	setScrollFactor('bg3', 0.3, 0.3);
-	scaleObject('bg3', scale, scale);
-	updateHitbox('bg3');
+	scaleObject('bg3', 1.7, 1.7);
+	--updateHitbox('bg3');
 	
-	makeAnimatedLuaSprite('lightning', 'nullspace/bolt', 0, posY);
+	makeAnimatedLuaSprite('lightning', 'nullspace/bolt', 0, -425);
 	addAnimationByPrefix('lightning', 'stike', 'BGLightning', 24, false);
 	setScrollFactor('lightning', 0.3, 0.3);
 	setProperty('lightning.alpha', 0.001);
 	
-	makeLuaSprite('ground', 'nullspace/floor', posX, posY);
+	makeLuaSprite('ground', 'nullspace/floor', -400, -425);
 	setScrollFactor('ground', 1, 1);
-	scaleObject('ground', scale, scale);
-	updateHitbox('ground');
+	scaleObject('ground', 1.7, 1.7);
+	--updateHitbox('ground');
 	
-	makeLuaSprite('stageCurtains', 'nullspace/purple smoke', posX - 20, posY);
+	makeLuaSprite('stageCurtains', 'nullspace/purple smoke', -400 - 20, -425);
 	setScrollFactor('stageCurtains', 1.1, 1.1);
-	scaleObject('stageCurtains', scale, scale);
-	updateHitbox('stageCurtains');
+	scaleObject('stageCurtains', 1.7, 1.7);
+	--updateHitbox('stageCurtains');
 
 	
 	addLuaSprite('bg', false);
