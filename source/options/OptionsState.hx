@@ -97,6 +97,10 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 
 		super.create();
+		
+		#if android
+		addVirtualPad(UP_DOWN, A_B_X_Y);
+		#end
 	}
 
 	override function closeSubState() {
@@ -106,6 +110,18 @@ class OptionsState extends MusicBeatState
 
 	override function update(elapsed:Float) {
 		super.update(elapsed);
+		
+		#if android
+		if (_virtualpad.buttonX.justPressed) {
+			FlxTransitionableState.skipNextTransIn = true;
+			FlxTransitionableState.skipNextTransOut = true;
+			MusicBeatState.switchState(new android.AndroidControlsMenu());
+		}
+		if (_virtualpad.buttonY.justPressed) {
+			removeVirtualPad();
+			openSubState(new android.HitboxSettingsSubState());
+		}
+		#end
 
 		if (controls.UI_UP_P) {
 			changeSelection(-1);
