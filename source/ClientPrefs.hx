@@ -60,7 +60,7 @@ class ClientPrefs {
 		'swapscroll' => true
 	];
 public static var hitboxalpha:Float = 0.2;
-	public static var hitboxmode:String = 'Classic';
+	public static var hitboxmode:String = 'New';
 	public static var comboOffset:Array<Int> = [0, 0, 0, 0];
 	public static var ratingOffset:Int = 0;
 	public static var sickWindow:Int = 45;
